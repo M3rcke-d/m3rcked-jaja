@@ -1,129 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M3RCKED'S MINEFIELD</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      background-color: #1a1a1a; /* Dark grey background */
-      color: #ecf0f1; /* Light text color */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 10px; /* Reduced margin to bring description closer */
-      color: #e74c3c; /* Red color for the title */
-    }
-
-    .description {
-      font-size: 1.2rem;
-      color: #ecf0f1; /* White text color */
-      text-align: center;
-      margin-bottom: 20px; /* Space below the description */
-    }
-
-    .squares-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      width: 100%;
-      max-width: 1200px;
-      margin-bottom: 20px;
-    }
-
-    .square {
-      background-color: #2c3e50; /* Darker grey for squares */
-      padding: 20px;
-      text-align: center;
-      font-size: 1.2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      color: #ecf0f1; /* Light text color */
-      text-decoration: none;
-    }
-
-    .square:hover {
-      transform: scale(1.05);
-      background-color: #34495e; /* Slightly lighter grey on hover */
-    }
-
-    iframe {
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        .social-icons {
+            display: flex;
+        }
+        .social-icons img {
+            width: 25px;
+            margin-left: 10px;
+            transition: 0.3s;
+        }
+        .social-icons img:hover {
+            opacity: 0.7;
+        }
+        .container {
+            margin-top: 100px;
+            padding: 50px 10%;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-  <h1>M3RCKED'S MINEFIELD</h1>
-  <p class="description">Bassically you came to the right place. This is it.</p>
-
-  <!-- Embedded YouTube Video -->
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/ozhHrzOXZkI"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-
-  <div class="squares-container">
-    <a href="https://www.youtube.com/watch?v=tiyE_rj_2g0" class="square">Black Milk</a>
-    <a href="https://www.youtube.com/watch?v=hnUe-Ixnit4" class="square">Danny Brown</a>
-    <a href="https://www.youtube.com/watch?v=fVzk9SKYYHA" class="square">Big Proof</a>
-    <a href="https://www.youtube.com/watch?v=xbeEd51c3QQ" class="square">Elzhi</a>
-    <a href="https://www.youtube.com/watch?v=t_spDkk_WLY" class="square">Boldy James</a>
-    <a href="https://www.youtube.com/watch?v=o-nQDvhAhAE" class="square">MC Breed</a>
-    <a href="https://www.youtube.com/watch?v=EEBRYhEV9Ow" class="square">J Dilla</a>
-    <a href="https://www.youtube.com/watch?v=MqlbZ5UmGmY" class="square">Royce Da 5'9"</a>
-    <a href="https://www.youtube.com/watch?v=0w8flt-Wiyo" class="square">Fatt Father</a>
-    <a href="https://www.youtube.com/watch?v=FqwjLiBez4c" class="square">Guilty Simpson</a>
-    <a href="https://www.youtube.com/watch?v=o_0_iBXHl5s" class="square">Obie Trice</a>
-    <a href="https://www.youtube.com/watch?v=buSc7Aa9yqg" class="square">87</a>
-    <a href="https://www.youtube.com/watch?v=Fx8UxJROQ-4" class="square">Kid Vishis</a>
-    <a href="https://www.youtube.com/watch?v=W0Ba7f4inCM" class="square">Trick-Trick</a>
-    <a href="https://www.youtube.com/watch?v=7OWlmUA2jFc" class="square">Slum Village</a>
-    <a href="https://www.youtube.com/watch?v=0HsdZOLoOeY" class="square">D12</a>
-    <a href="https://www.youtube.com/watch?v=3sYwVL3tF54" class="square">Ma$e</a>
-    <a href="https://www.youtube.com/watch?v=X8mlPaZgHTs" class="square">Fat Ray</a>
-    <a href="https://www.youtube.com/watch?v=y95ybc8ThQ4" class="square">Lathun</a>
-    <a href="https://www.youtube.com/watch?v=y7fNZNX2Kyk" class="square">Bishop Lamont</a>
-    <a href="https://www.youtube.com/watch?v=xifuZ9x57Ew" class="square">Rappin’ Ron</a>
-    <a href="https://www.youtube.com/watch?v=LjRC4VeOUas" class="square">La’Vell</a>
-    <a href="https://www.youtube.com/watch?v=QOx7kDWw7Ps" class="square">King Gordy</a>
-    <a href="https://www.youtube.com/watch?v=Cm6XJ8RvyiE" class="square">Marv Won</a>
-    <a href="https://www.youtube.com/watch?v=CWTeCrmz2vs" class="square">Punchline</a>
-    <a href="https://www.youtube.com/watch?v=Cg7lKJ6CLTAl" class="square">R.O.C.</a>
-    <a href="https://www.youtube.com/watch?v=C6uCBWpbq_w" class="square">Esham</a>
-    <a href="https://www.youtube.com/watch?v=RdJS3CtoFtc" class="square">Spose</a>
-    <a href="https://www.youtube.com/watch?v=FqwjLiBez4c" class="square">The Fat Killahz</a>
-    <a href="#" class="square">Miz Korona</a> <!-- Add link here -->
-    <a href="#" class="square">Lando Chill</a> <!-- Add link here -->
-    <a href="#" class="square">The Cool Kids</a> <!-- Add link here -->
-    <a href="#" class="square">Icewear Vezzo</a> <!-- Add link here -->
-    <a href="#" class="square">Team Eastside Peezy</a> <!-- Add link here -->
-    <a href="#" class="square">Yung Ra</a> <!-- Add link here -->
-    <a href="#" class="square">Payroll Giovanni</a> <!-- Add link here -->
-    <a href="#" class="square">Jeezy</a> <!-- Add link here -->
-    <a href="#" class="square">Sada Baby</a> <!-- Add link here -->
-    <a href="#" class="square">Kash Doll</a> <!-- Add link here -->
-    <a href="#" class="square">Cash Kidd</a> <!-- Add link here -->
-    <a href="#" class="square">Pusha T</a> <!-- Add link here -->
-    <a href="#" class="square">Tay B</a> <!-- Add link here -->
-    <a href="#" class="square">Juice</a> <!-- Add link here -->
-    <a href="#" class="square">Kalan.FrFr</a> <!-- Add link here -->
-    <a href="#" class="square">Tee Grizzley</a> <!-- Add link here -->
-  </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com" target="_blank"><img src="github.png" alt="GitHub"></a>
+        </div>
+    </nav>
+    
+    <section id="home" class="container">
+        <h1>Welcome to My Website</h1>
+        <p>Discover my projects, work experience, and how to get in touch.</p>
+    </section>
+    <section id="about" class="container">
+        <h1>About Me</h1>
+        <p>I am a passionate web developer with experience in modern front-end technologies.</p>
+    </section>
+    <section id="projects" class="container">
+        <h1>My Projects</h1>
+        <p>Here you can explore the latest projects I have worked on.</p>
+    </section>
+    <section id="work" class="container">
+        <h1>Work Experience</h1>
+        <p>Details about my professional experience and past roles.</p>
+    </section>
+    <section id="contact" class="container">
+        <h1>Contact Me</h1>
+        <p>Feel free to reach out via email or through my social profiles.</p>
+    </section>
 </body>
 </html>
