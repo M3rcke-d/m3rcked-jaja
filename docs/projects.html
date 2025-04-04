@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+	<link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            overflow-x: hidden;
+			text-align:left;
+        }
+		
+        h1 {
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+		h3 {
+            text-align: left;
+            padding: 30px;
+            margin: 0;
+			font-size:3rem;
+        }
+		p {
+			font-size: 1.2rem;
+			padding-top: 10px;
+		}
+		
+        .projects-wrapper {
+            position: relative;
+            width: 100vw;
+            margin-left: -50vw;
+            left: 50%;
+        }
+        .projects-carousel {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .projects-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+        .project-card {
+            flex: 0 0 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: white;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+		
+		img {
+		text-align: right;
+		}
+		
+		
+		
+        .carousel-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 10;
+            border: none;
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+        .carousel-nav:hover {
+            opacity: 1;
+        }
+        .carousel-prev {
+            left: 20px;
+        }
+        .carousel-next {
+            right: 20px;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+        }
+        .dot.active {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="projects.html">Projects</a></li>
+			<li><a href="work.html">Work</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a target="_blank" rel="noopener noreferrer" href="img/redacted-resume-caesar-azar.pdf">Resume</a></li>
+		</ul>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank"><img src="img/linkedin-logo.png" alt="LinkedIn"></a>
+            <a href="https://github.com" target="_blank"><img src="img/github-mark-logo.png" alt="GitHub"></a>
+        </div>
+    </nav>
+	
+    <h1>My Projects</h1>
+    
+    <div class="projects-wrapper">
+        <button class="carousel-nav carousel-prev">❮</button>
+        <button class="carousel-nav carousel-next">❯</button>
+        
+        <div class="projects-carousel">
+            <div class="projects-track" id="projectsTrack">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>Designing and Implementing Logging aggregation solution</h3>
+                    <p>Installed and designed interactive dashboard for visualizing logs in my AD DS network. Using Splunk Enterprise I created a log aggregator. </p>
+                    <p><strong>Experience:</strong> SPLUNK, Rsyslog, and SIEM experience</p>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>Creating a DNS filter using PIHOLE</h3>
+                    <p>Deployed full-featured browser managed DNS filter solution to home network using public GITHUB host lists to block suspicious connections for my home network.</p>
+                    <p><strong>Experience:</strong> Linux, DNS networking, and DHCP</p>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>Fitness Tracker App</h3>
+                    <p>Mobile application for tracking workouts, nutrition, and health metrics.</p>
+                    <p><strong>Tech:</strong> Flutter, Firebase</p>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <h3>pfSense Home server deployment</h3>
+					<div class="img">
+						<img src="img/pfsense.png" style="float:right">
+					</div>						
+                    <p>Settup a personal firewall to keep my network secure.</p>
+                    <p><strong>Tech:</strong> Python, TensorFlow</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="carousel-dots" id="carouselDots">
+        <!-- Dots will be added by JavaScript -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('projectsTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            const cards = document.querySelectorAll('.project-card');
+            const cardCount = cards.length;
+            let currentPosition = 0;
+            
+            // Create navigation dots
+            for (let i = 0; i < cardCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToCard(i));
+                dotsContainer.appendChild(dot);
+            }
+            
+            const dots = document.querySelectorAll('.dot');
+            
+            // Set initial position
+            updateCarousel();
+			
+			// MODULO next and prev		
+			prevBtn.addEventListener('click', () => {
+				currentPosition = (currentPosition - 1 + cardCount) % cardCount;
+				updateCarousel();
+			});
+			
+			nextBtn.addEventListener('click', () => {
+				currentPosition = (currentPosition + 1) % cardCount;
+				updateCarousel();
+			});
+    
+            
+            function goToCard(cardIndex) {
+                currentPosition = cardIndex;
+                updateCarousel();
+            }
+            
+			function updateCarousel() {
+				//use pixels instead of cardconst
+				const card = cards[0];
+				const cardStyle = getComputedStyle(card);
+				const cardWidth = card.offsetWidth + 
+								 parseInt(cardStyle.marginLeft) + 
+								 parseInt(cardStyle.marginRight);
+
+				// the worst part
+				const newPosition = -currentPosition * cardWidth;
+				track.style.transform = `translateX(${newPosition}px)`;
+				
+				// dots and arrow grey
+				dots.forEach((dot, index) => {
+					dot.classList.toggle('active', index === currentPosition);
+				});
+				
+			}
+        });
+    </script>
+</body>
+</html>
