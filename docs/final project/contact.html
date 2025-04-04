@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Caesar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="projects.html">Projects</a></li>
+			<li><a href="work.html">Work</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a target="_blank" rel="noopener noreferrer" href="img/redacted-resume-caesar-azar.pdf">Resume</a></li>
+		</ul>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank"><img src="img/linkedin-logo.png" alt="LinkedIn"></a>
+            <a href="https://github.com" target="_blank"><img src="img/github-mark-logo.png" alt="GitHub"></a>
+        </div>
+    </nav>
+	
+	
+    <main style="margin-top: 70px; padding: 20px; max-width: 800px; margin: 0 auto;">
+        <h1>Contact</h1>
+        <?php include('form.php'); ?>
+    </main>
+
+    <h1>Contact Me</h1>
+    
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Direct Contact</h2>
+            <table class="contact-table">
+                <tr>
+                    <th>Email</th>
+                    <td><a href="mailto:your.email@example.com">caesarazar@gmail.com</a></td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td><a href="tel:+1234567890">+1 (234) 567-890</a></td>
+                </tr>
+            </table>
+        </div>
+        
+		<div class="contact-form">
+			<h2>Send a Message</h2>
+			<form action="form.php" method="POST">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" class="form-control" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="subject">Subject</label>
+					<input type="text" id="subject" name="subject" class="form-control" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+				</div>
+				
+				<button type="submit" class="submit-btn">Send Message</button>
+			</form>
+		</div>
+    </div>
+</body>
+</html>
+	
+	
+	
+	
+	
